@@ -1,0 +1,358 @@
+$font: Poiret One;
+$bodycolor: #551501;
+$barcolor: #8fde9d;
+$highlight: #e0d63b;
+$link: #707890;
+$buttoncolor: #707890;
+$white: #ffffff;
+$width-name: min-width;
+$tablet-width: 500px;
+$desktop-width: 1000px;
+
+
+@import "button";
+
+*{
+    box-sizing: border box;
+}
+
+body{
+    font-family:$font;
+    color: $bodycolor;
+}
+
+img{
+    max-width:100%;
+}
+
+
+.sidebar{
+    background-color: $barcolor;
+    h1{
+        margin-top:0;
+    }
+}
+
+.container{
+    .address{
+        p{
+        margin-left:65px;
+        font-size:30px;
+        }
+    }
+}
+
+.sidenav{
+    padding:20px;
+    .reservations{
+        padding-left:45px;
+        font-size:25px;
+        animation-name: spinner;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-duration: 10s;
+        transform-style:preserve-3d
+    }
+    .reservations:hover{
+        animation-play-state: paused;
+    }
+    @keyframes spinner {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(-360deg); }
+    }
+    li{
+        list-style-type:none;
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+    a{
+      text-decoration:none;
+      font-size:30px;
+      color:$bodycolor;
+      font-weight:bold;
+    }
+    a:hover{
+        border:3px solid $highlight;
+    }
+    .current{
+         border:3px solid $highlight
+    }
+}
+
+.main{
+    .blarneysmain{
+        margin-top:30px;
+    }
+    .intro{
+        padding-left:30px;
+        padding-right:30px;
+        padding-bottom:20px;
+        line-height:2.0;
+        p{
+            font-size:20px;
+        }
+    }
+    .intro2{
+        padding-left:30px;
+        padding-right:30px;
+        padding-bottom:20px;
+        line-height:2.0;
+        p{
+            font-size:20px;
+        }
+        a{
+            text-decoration:none;
+            color: $link;
+        }
+        a:hover{
+            border:3px solid #e0d63b;
+        }
+    }
+.menu{
+    li {list-style-type:none;
+}
+    .menu-section{
+        h2{
+        font-size:25px;
+        border-bottom: 2px solid $bodycolor;
+        }       
+    }
+}
+.hero{
+    background-image: url(../img/inside.jpg);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-size: 500px 300px;
+    height:31%;
+    .herotext{
+    color:$white;
+}
+}
+
+.form{
+    input[type="submit"]{
+        padding-left:20px;
+        padding-right:20px;
+        background-color:$buttoncolor;
+        color:$barcolor;
+        font-family:$font;
+        font-weight:bold;
+    }
+    input[type="text"]{
+        padding:20px;
+        width:300px;
+        font-family:$font;
+        font-weight:bold;
+    }
+    textarea{
+        padding:50px;
+        width:300px;
+        font-family:$font;
+        font-weight:bold;
+    }
+}
+}
+
+@media screen and ($width-name:$tablet-width){
+
+html, body{
+    height:100%;
+    padding:0;
+    margin:0;
+}
+
+.container{
+    display:flex;
+    flex-direction:row;
+    min-height:100%;
+    .address{
+        p{
+        margin-left:0;
+        }
+}
+}
+
+
+  .sidebar{
+    flex:0;
+    flex-basis:330px;
+    display:flex;
+    justify-content:flex-start;
+    flex-direction:column;
+    text-align:center;
+}
+.sidenav{
+   padding-right:40px;
+   top:25%;
+   li{
+        padding-top:20px;
+        padding-bottom:20px;
+    }
+    a{
+      display:block;
+    }
+}
+
+.main{
+    .intro{
+        padding-left:30px;
+        padding-right:30px;
+        padding-bottom:20px;
+        line-height:2.0;
+        p{
+            font-size:30px;
+        }
+    }
+    .intro2{
+        padding-left:30px;
+        padding-right:30px;
+        padding-bottom:20px;
+        line-height:2.0;
+        p{
+            font-size:30px;
+        }
+    }
+}
+.menu{
+    h1{
+        margin:auto;
+        width:40%;
+        font-size:30px;
+    }
+    .leftmenu{
+        float:left;
+        width:50%
+    }
+    .rightmenu{
+        float:left;
+        width:50%;
+    }
+    .menu-section{
+        text-align:center;
+        h2{
+        font-size:30px;
+        border-bottom: 2px solid $bodycolor;
+        }       
+    }
+}
+
+@media screen and ($width-name:$desktop-width){
+
+   html, body{
+    height:100%;
+    padding:0;
+    margin:0;}
+
+.container{
+    display:flex;
+    flex-direction:row;
+    min-height:100%;
+           .address{
+            p{
+            margin-left:0;
+            }
+            }
+    }
+
+.sidebar{
+    flex:0;
+    flex-basis:400px;
+    display:flex;
+    justify-content:flex-start;
+    flex-direction:column;
+    text-align:center;
+    a{
+      display:inline-block;
+    }
+} 
+
+.sidenav{
+    padding-right:40px;
+    padding-left:60px;
+    top:25%;
+    li{
+        padding-top:20px;
+        padding-bottom:20px;
+    }
+    a{
+      display:block;
+    }
+}
+
+.main{
+    .intro{
+        padding-left:30px;
+        padding-right:30px;
+        padding-bottom:20px;
+        line-height:2.0;
+        p{
+            font-size:20px;
+        }
+    }
+    .intro2{
+        padding-left:30px;
+        padding-right:30px;
+        padding-bottom:20px;
+        line-height:2.0;
+        p{
+            font-size:20px;
+        }
+    }
+    .about{
+        display:flex;
+        min-height:100%;
+        .about_bottomleft{
+            flex:0;
+            flex-basis:800px;
+        }    
+    }   
+    .form{
+    text-align:center;
+    margin-left:30px;
+}
+.hero{
+    position:relative;
+    .herotext{
+     position:absolute;
+    top:50%;
+    left:50%;
+}
+}
+}
+.mainhome{
+    display:flex;
+    .gallery1{
+    img{
+        max-width:100%
+    }
+    }
+    .gallery2{
+    img{
+        max-width:100%
+    }    
+    }
+}
+.menu{
+    h1{
+        margin:auto;
+        width:30%;
+        font-size:60px;
+    }
+    .leftmenu{
+        float:left;
+        width:50%
+    }
+    .rightmenu{
+        float:left;
+        width:50%;
+    }
+    .menu-section{
+        text-align:center;
+        h2{
+        font-size:40px;
+        border-bottom: 2px solid $bodycolor;
+        }       
+}
+}
+}
+}
